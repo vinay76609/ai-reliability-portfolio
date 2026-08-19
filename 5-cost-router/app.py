@@ -11,9 +11,8 @@ import duckdb
 import pandas as pd
 import altair as alt
 import streamlit as st
-
-DB_PATH = os.environ.get("ROUTER_DB_PATH", "data/router_results.db")
-
+_HERE = os.path.dirname(os.path.abspath(__file__))
+DB_PATH = os.environ.get("ROUTER_DB_PATH", os.path.join(_HERE, "data", "router_results.db"))
 st.set_page_config(page_title="LLM Cost Router", page_icon="⇄", layout="wide")
 
 # ---------------------------------------------------------------- styling
