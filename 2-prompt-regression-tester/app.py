@@ -11,9 +11,8 @@ import os
 import duckdb
 import pandas as pd
 import streamlit as st
-
-DB_PATH = os.environ.get("REGRESSION_DB_PATH", "data/regression_results.db")
-
+_HERE = os.path.dirname(os.path.abspath(__file__))
+DB_PATH = os.environ.get("REGRESSION_DB_PATH", os.path.join(_HERE, "data", "regression_results.db"))
 st.set_page_config(page_title="Prompt Regression Tester", page_icon="●", layout="wide")
 
 # ---------------------------------------------------------------- styling
