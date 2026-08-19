@@ -13,9 +13,8 @@ import duckdb
 import pandas as pd
 import altair as alt
 import streamlit as st
-
-DB_PATH = os.environ.get("RETRIEVAL_DB_PATH", "data/retrieval_results.db")
-
+_HERE = os.path.dirname(os.path.abspath(__file__))
+DB_PATH = os.environ.get("RETRIEVAL_DB_PATH", os.path.join(_HERE, "data", "retrieval_results.db"))
 st.set_page_config(page_title="Retrieval Quality Analyzer", page_icon="◈", layout="wide")
 
 # ---------------------------------------------------------------- styling
