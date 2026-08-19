@@ -15,12 +15,11 @@ import duckdb
 import pandas as pd
 import altair as alt
 import streamlit as st
-
+_HERE = os.path.dirname(os.path.abspath(__file__))
+DB_PATH = os.environ.get("EVAL_DB_PATH", os.path.join(_HERE, "data", "eval_runs.db"))
 # --------------------------------------------------------------------------
 # Config
 # --------------------------------------------------------------------------
-DB_PATH = os.environ.get("EVAL_DB_PATH", "data/eval_runs.db")
-
 st.set_page_config(
     page_title="LLM Eval Dashboard",
     page_icon="◆",
